@@ -1,35 +1,22 @@
 import React, { Component } from "react";
+import CardNote from "./cardNote";
 
-export class ListOfNotes extends Component {
+class ListOfNotes extends Component {
     render(){
         return (
             <ul>
                 <li>
-                    <section>
-                        <header>
-                            <h3>Title</h3>
-                        </header>
-                        <p></p>
-                    </section>
+                    <CardNote/>
                 </li>
                 <li>
-                    <section>
-                        <header>
-                            <h3>Title</h3>
-                        </header>
-                        <p></p>
-                    </section>
+                    <CardNote/>
                 </li>
                 <li>
-                    <section>
-                        <header>
-                            <h3>Title</h3>
-                        </header>
-                        <p></p>
-                    </section>
+                    <CardNote/>
                 </li>
             </ul>
         );
     }
 }
 
+export default ListOfNotes
