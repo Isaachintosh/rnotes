@@ -1,19 +1,18 @@
 import React, { Component } from "react";
-import CardNote from "./cardNote";
+import CardNote from "./cardNote/cardNote";
 
 class ListOfNotes extends Component {
     render(){
         return (
             <ul>
-                <li>
-                    <CardNote/>
-                </li>
-                <li>
-                    <CardNote/>
-                </li>
-                <li>
-                    <CardNote/>
-                </li>
+                {Array.of("Works", "Works", "Studies").map((categories, index) => {
+                    return (
+                        <li key={index}>
+                            <h3>{categories}</h3>
+                            <CardNote/>
+                        </li>
+                    );
+                })}
             </ul>
         );
     }
