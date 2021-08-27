@@ -1,17 +1,16 @@
-import React from 'react';
-import { ListOfNotes } from './components/listOfNotes';
+import React, { Component } from 'react';
+import FormCreateNote from './components/formCreateNote';
+import ListOfNotes from './components/listOfNotes';
 
-function App() {
-  return (
-    <section>
-      <form>
-        <input type="text" placeholder="Title"/>
-        <textarea placeholder="Write your note here..."/>
-        <button>Create Note</button>
+class App extends Component {
+  render() {
+    return (
+      <section>
+        <FormCreateNote/>
         <ListOfNotes/>
-      </form>
-    </section>
-  );
+      </section>
+    );
+  }
 }
 
 export default App;
