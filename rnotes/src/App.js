@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FormCreateNote from './components/formCreateNote';
+import CategoriesList from './components/categoriesList/categoriesList';
 import ListOfNotes from './components/listOfNotes';
 import './assets/App.css'
 import './assets/index.css'
@@ -34,10 +35,13 @@ class App extends Component {
     return (
       <section className="content">
         <FormCreateNote createNote={this.createNote.bind(this)}/>
-        <ListOfNotes
-          deleteNote={this._deleteNote.bind(this)}
-          notes={this.state.notes}
-        />
+        <main className="main-content">
+          <CategoriesList/>
+          <ListOfNotes
+            deleteNote={this._deleteNote.bind(this)}
+            notes={this.state.notes}
+          />
+        </main>
       </section>
     );
   }

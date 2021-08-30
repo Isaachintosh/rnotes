@@ -6,8 +6,9 @@
     background-color: var(--background-details);
     border-radius: 4px;
     flex-wrap: wrap;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 16px;
+
 }
 
 .card-note:hover {
