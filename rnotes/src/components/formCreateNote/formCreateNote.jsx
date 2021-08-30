@@ -35,13 +35,16 @@ class FormCreateNote extends Component {
                     placeholder="Title"
                     className="form-registration_input"
                     onChange={this._handleChangeTitle.bind(this)}
+                    required={true}
                 />
                 <textarea
                     rows={15}
                     placeholder="Write your note here..."
                     className="form-registration_input"
                     onChange={this._handleChangeText.bind(this)}
+                    required={true}
                 />
+
                 <button className="form-registration_input form-registration_submit">
                     Create Note
                 </button>
