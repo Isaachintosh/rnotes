@@ -22,9 +22,10 @@
 
 .card-note_header {
     font-size: 1.1em;
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    width: 100%;
 }
 
 .card-note_text {
@@ -35,4 +36,19 @@
 .card-note_title {
     font-size: 1.2em;
     margin-right: 12px;
+}
+
+.btn-delete {
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.btn-delete:hover {
+    background: #ac1d1d;
+    transition: 0.5s;
+}
+
+.btn-delete:active {
+    background: #ff5e5e;
+    transition: 0.5s;
 }
