@@ -8,6 +8,10 @@ export default class Categories {
         this._subscribers.push(func)
     }
 
+    unsubscr(func){
+        this._subscribers = this._subscribers.filter(f => f !== func)
+    }
+
     notify(){
         this._subscribers.forEach(func => {
             func(this.categories)

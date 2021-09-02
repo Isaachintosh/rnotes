@@ -8,12 +8,15 @@ class FormCreateNote extends Component {
         this.text = "";
         this.category = "Unclassified category"
         this.state = { categories: [] }
+        this._newCategories = this._newCategories.bind(this)
 
     }
     componentDidMount() {
-        this.props.categories.subscr(this._newCategories.bind(this))
+        this.props.categories.subscr(this._newCategories)
     }
-
+    componentWillUnmount() {
+        this.props.categories.unsubscr(this._newCategories)
+    }
     _newCategories(categories) {
         this.setState({ ...this.state, categories })
     }
