@@ -17,9 +17,10 @@ class CardNote extends Component {
                         <DeleteSVG
                             className="btn-delete"
                             onClick={this.eraseNote.bind(this)}
-                        />
+                            />
                     </div>
                 </header>
+                <h4 className="category-info">{this.props.category}</h4>
                 <p className="card-note_text">{this.props.text}</p>
 
             </section>

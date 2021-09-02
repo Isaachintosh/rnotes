@@ -17,4 +17,5 @@
     --background-aside: #181c24;
     --background-details: #485168;
     --text-input: #f0f0f0;
+    /* adicionar var para :focus effect */
 }

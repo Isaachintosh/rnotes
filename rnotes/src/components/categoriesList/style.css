@@ -18,6 +18,22 @@
     border-radius: 8px;
     background: var(--secondary);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+
+.category-item:hover {
+    background: var(--hover-secondary);
+    transition: 0.5s;
+}
+
+.category-item:active {
+    background: var(--active-secondary);
+    transition: 0.5s;
+}
+
+.category-item:focus {
+    background: var(--secondary);
+    transition: 0.5s;
 }
 
 .category_input {
@@ -29,4 +45,19 @@
     font-weight: 100;
     color: #ffffff;
     border-radius: 8px;
+}
+
+.category_input:hover {
+    background: var(--hover-secondary);
+    transition: 0.5s;
+}
+
+.category_input:active {
+    background: var(--active-secondary);
+    transition: 0.5s;
+}
+
+.category_input:focus {
+    background: var(--secondary);
+    transition: 0.5s;
 }

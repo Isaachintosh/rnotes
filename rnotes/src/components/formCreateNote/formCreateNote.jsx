@@ -5,7 +5,22 @@ class FormCreateNote extends Component {
     constructor(props){
         super(props);
         this.title = "";
+        this.text = "";
+        this.category = "Unclassified category"
+        this.state = { categories: [] }
 
+    }
+    componentDidMount() {
+        this.props.categories.subscr(this._newCategories.bind(this))
+    }
+
+    _newCategories(categories) {
+        this.setState({ ...this.state, categories })
+    }
+
+    _handleChangeCategory(e) {
+        e.stopPropagation()
+        this.category = e.target.value
     }
 
     _handleChangeTitle(e){
@@ -21,7 +36,7 @@ class FormCreateNote extends Component {
     _createNote(e){
         e.preventDefault()
         e.stopPropagation()
-        this.props.createNote(this.title, this.text)
+        this.props.createNote(this.title, this.text, this.category)
     }
 
     render(){
@@ -30,6 +45,19 @@ class FormCreateNote extends Component {
                 className="form-registration"
                 onSubmit={this._createNote.bind(this)}
             >
+                <select 
+                    onChange={this._handleChangeCategory.bind(this)}
+                    className="form-registration_input"
+                    placeholder="Choose a category"
+                >
+                    <option>Without category</option>
+                    {this.state.categories.map((category, index) => {
+                        return (
+                            <option key={index} className="category-item">
+                                {category}
+                            </option>)
+                    })}
+                </select>
                 <input 
                     type="text"
                     placeholder="Title"

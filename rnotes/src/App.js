@@ -4,42 +4,33 @@ import CategoriesList from './components/categoriesList/categoriesList';
 import ListOfNotes from './components/listOfNotes';
 import './assets/App.css'
 import './assets/index.css'
+import Categories from './data/Categories';
+import ArrayOfNotes from './data/Notes';
 
 class App extends Component {
 
   constructor(){
     super();
-    this.state = {
-      notes:[]
-    }
+    this.categories = new Categories()
+    this.notes = new ArrayOfNotes()
   }
-  createNote(title, text){
-    const newNote = {title, text}
-    const newArrayNotes = [...this.state.notes, newNote]
-    const newState = {
-      notes:newArrayNotes
-    }
-    this.setState(newState)
-  }
-  _deleteNote(index, e){
-    if(window.confirm('Are you sure to delete this note?')){
-      let arrayOfNotes = this.state.notes
-      arrayOfNotes.splice(index, 1)
-      this.setState({notes: arrayOfNotes})
-    } else {
-      return
-    }
-  }
+  
 
   render() {
     return (
       <section className="content">
-        <FormCreateNote createNote={this.createNote.bind(this)}/>
+        <FormCreateNote
+          categories={this.categories}
+          createNote={this.notes.addNote.bind(this.notes)}
+        />
         <main className="main-content">
-          <CategoriesList/>
+          <CategoriesList
+            addCategory={this.categories.addCategory.bind(this.categories)}
+            categories={this.categories}
+          />
           <ListOfNotes
-            deleteNote={this._deleteNote.bind(this)}
-            notes={this.state.notes}
+            deleteNote={this.notes.deleteNote.bind(this.notes)}
+            notes={this.notes}
           />
         </main>
       </section>
